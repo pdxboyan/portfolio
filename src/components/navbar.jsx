@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("hero");
 
-  // Scrollspy using IntersectionObserver
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
@@ -15,65 +17,130 @@ export default function Navbar() {
           }
         });
       },
-      { threshold: 0.6 } // 60% of section visible
+      { threshold: 0.6 }
     );
 
     sections.forEach((section) => observer.observe(section));
-
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
+  const navLinks = [
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+  ];
+
+
+  const socialLinks = [
+    {
+      id: "github",
+      href: "https://github.com/pdxboyan",
+      icon: faGithub,
+      label: "GitHub",
+      hover: "hover:text-black",
+    },
+    {
+      id: "linkedin",
+      href: "https://www.linkedin.com/in/boyan-gankov-718a9926a/",
+      icon: faLinkedin,
+      label: "LinkedIn",
+      hover: "hover:text-blue-700",
+    },
+  ];
+  
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow z-50">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <nav className="fixed top-0 z-50 w-full bg-white/50 backdrop-blur-lg border-b border-black/5">
+      {/* Top bar */}
+      <div className="max-w-7xl mx-auto px-6 h-24 grid grid-cols-2 md:grid-cols-3 items-center">
         {/* Brand */}
-        <a href="#hero" className="text-xl font-bold text-gray-900">Boyan Gankov</a>
+        <a href="#hero" className="font-brand text-sm justify-self-start">
+          boyan / portfolio
+        </a>
 
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden text-gray-900 text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          ☰
-        </button>
-
-        {/* Links */}
-        <div className={`md:flex md:items-center ${isOpen ? "block" : "hidden"}`}>
-          <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0">
-            {[
-              { id: "hero", label: "Home" },
-              { id: "projects", label: "Projects" },
-              { id: "about", label: "About" },
-              { id: "contact", label: "Contact" }
-            ].map((link) => (
+        {/* Desktop nav */}
+        <div className="hidden md:flex md:justify-self-center md:col-span-1">
+          <ul className="flex items-center space-x-8">
+            {navLinks.map((link) => (
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}
-                  className={`block py-2 px-3 rounded transition-colors ${
-                    active === link.id
-                      ? "text-blue-500 font-semibold"
-                      : "text-gray-700 hover:text-blue-500"
+                  className={`font-title transition-colors ${
+                    active === link.id ? "text-gray-900 font-semibold" : "text-gray-700 hover:text-black"
                   }`}
-                  onClick={() => setIsOpen(false)} // close mobile menu on click
                 >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
+        </div>
 
-          {/* Social icons */}
-          <div className="flex space-x-4 mt-4 md:mt-0 md:ml-6">
+        {/* Desktop social icons */}
+        <div className="hidden md:flex items-center justify-self-end px-6 space-x-4">
+          {socialLinks.map((link) => (
             <a
-              href="https://github.com/pdxboyan"
+              key={link.id}
+              href={link.href}
               target="_blank"
               rel="noreferrer"
-              className="text-gray-700 hover:text-blue-500 transition-colors"
+              aria-label={link.label}
+              className={`text-gray-600 transition-colors ${link.hover}`}
             >
-              Github
+              <FontAwesomeIcon icon={link.icon} size="xl" />
             </a>
-          </div>
+          ))}
+        </div>
+        
+        
+        {/* Animated mobile hamburger button (= -> x) */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative w-8 h-8 md:hidden justify-self-end"
+          aria-label="Toggle menu"
+        >
+          <span className={`absolute top-1/4 left-0 w-full h-0.5 bg-black transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`absolute top-1/2 left-0 w-full h-0.5 bg-black transition-all duration-300 ${isOpen ? "opacity-0" : ""}`} />
+          <span className={`absolute top-3/4 left-0 w-full h-0.5 bg-black transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+        </button>
+      </div>
+
+      {/* Mobile menu slide animations */}
+      <div
+        className={`md:hidden absolute top-full left-0 w-full bg-white shadow transition-all duration-300 ${
+          isOpen ? "opacity-100 translate-y-0 pointer-events-auto": "opacity-0 -translate-y-2 pointer-events-none"
+        }`}
+      >
+        <ul className="flex flex-col px-4 py-3 space-y-2">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                onClick={() => setIsOpen(false)}
+                className={`font-title block py-2 ${
+                  active === link.id ? "text-gray-900 font-semibold" : "text-gray-700 hover:text-black"
+                }`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile social icons */}
+        <div className="flex items-center space-x-4 px-4 pb-4">
+          {socialLinks.map((link) => (
+            <a
+              key={link.id}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={link.label}
+              className={`text-gray-600 transition-colors ${link.hover}`}
+            >
+              <FontAwesomeIcon icon={link.icon} size="xl" />
+            </a>
+          ))}
         </div>
       </div>
     </nav>

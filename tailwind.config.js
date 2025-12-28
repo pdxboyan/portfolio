@@ -11,8 +11,9 @@ export default {
         secondary: "#1e293b",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Poppins", "sans-serif"],
+        brand: ["'Press Start 2P'", "serif"],
+        title: ["'Cantarell-Bold'", "serif"],
+        text: ["'Cantarell-Regular'", "serif"],
       },
     },
   },
