@@ -61,9 +61,9 @@ function App() {
       </section>
 
       {/* About Me */}
-      <section id="about" className="scroll-mt-24 bg-orange-200 flex flex-col items-center justify-start p-12">
+      <section id="about" className="scroll-mt-24 bg-orange-200 flex flex-col items-center justify-start p-12 pb-32">
         <Animate text="About Me" duration={2000} variant="primary" />
-         <div className="max-w-screen-3xl mx-auto pt-16 grid grid-cols-1 md:grid-cols-2 md:gap-16 items-start">
+         <div className="w-[75vw] mx-auto pt-16 grid grid-cols-1 md:grid-cols-2 md:gap-16 items-start">
 
           {/* Left column */}
           <div className="flex flex-col items-center md:items-start text-left pb-8 md:pl-6 md:pt-16">
@@ -151,7 +151,7 @@ function App() {
               >
                 <h3 className="font-text font-bold text-xl mb-2">Spotify / Open AI Cloud App</h3>
                 <img
-                src="/portfolio/images/moodrun.png"
+                src="/portfolio/images/cloudrun.png"
                 alt="Cloud Run App"
                 className="w-48 h-48 object-cover rounded-2xl mb-4"
                 />
@@ -177,7 +177,7 @@ function App() {
               >
                 <h3 className="font-text font-bold text-xl mb-2">Check-in & Point of Sale Server</h3>
                 <img
-                src="/portfolio/images/epl.png"
+                src="/portfolio/images/psu.png"
                 alt="Electronics Prototyping Lab"
                 className="w-48 h-48 object-cover rounded-2xl mb-4"
                 />
@@ -203,7 +203,7 @@ function App() {
               >
                 <h3 className="font-text font-bold text-xl mb-2">C Flat Programming Language</h3>
                 <img
-                src="/portfolio/images/CFlat.png"
+                src="/portfolio/images/Cb.png"
                 alt="C Flat Language"
                 className="w-48 h-48 object-cover rounded-2xl mb-4"
                 />
@@ -249,14 +249,14 @@ function App() {
             hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
             focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
               <a
-              href="https://pdxboyan.github.io/articles"
+              href="https://pdxboyan.github.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center"
               >
                 <h3 className="font-text font-bold text-xl mb-2">Portfolio Website</h3>
                 <img
-                src="/portfolio/images/C.png"
+                src="/portfolio/images/portfolio.png"
                 alt="React + Vite + Tailwind"
                 className="w-48 h-48 object-cover rounded-2xl mb-4"
                 />
@@ -275,12 +275,12 @@ function App() {
         <Animate text="Contact" duration={2000} variant="primary" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 p-10 ">
           
-            <div className="flex items-center space-x-3 pl-16">
+            <div className="flex items-center space-x-3 pl-10 md:pl-16">
               <FaPhone size={28} />
               <span>(503)-750-5934</span>
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 pl-10">
               <FaEnvelope size={28} />
               <span>pdx.boyan@gmail.com</span>
             </div>
