@@ -107,7 +107,7 @@ export default function Navbar() {
 
       {/* Mobile menu slide animations */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-white shadow transition-all duration-300 ${
+        className={`md:hidden absolute top-full left-0 w-full bg-orange-300 shadow transition-all duration-300 ${
           isOpen ? "opacity-100 translate-y-0 pointer-events-auto": "opacity-0 -translate-y-2 pointer-events-none"
         }`}
       >

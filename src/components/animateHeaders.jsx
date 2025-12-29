@@ -27,7 +27,7 @@ export default function Animate({ text, color = "black", duration = 1000 }) {
   }, []);
 
   return (
-    <h2 ref={titleRef} className="font-title text-6xl font-bold relative text-center">
+    <h2 ref={titleRef} className="font-title text-5xl md:text-6xl font-bold relative text-center">
       {text}
       <span
         className={`block h-1 mt-2 transition-all ease-out`}
