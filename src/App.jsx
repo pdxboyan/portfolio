@@ -15,13 +15,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { 
   SiC, 
-  SiCplusplus, 
   SiRust, 
   SiTailwindcss, 
   SiFlask, 
   SiDjango, 
   SiPostgresql 
 } from "react-icons/si";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 
 const skills = [
@@ -88,7 +88,6 @@ function App() {
 
           {/* Right column */}
           <div className="text-center">
-            {/*<h3 className="font-title text-3xl font-bold mb-8 text-center">Tech Stack</h3>*/}
             <Animate text="Tech Stack" duration={2000} variant="secondary" />
 
             <div className="grid grid-cols-4 gap-6">
@@ -110,11 +109,159 @@ function App() {
       {/* Projects */}
       <section id="projects" className="scroll-mt-24 bg-orange-300 flex flex-col items-center justify-start pt-12 px-6">
         <Animate text="Projects" duration={2000} variant="primary" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 w-full max-w-6xl pb-12">
+
+            {/* Ferrofluid Visualizer */}
+            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+              <a
+              href="https://pdxboyan.github.io/articles/12-11-24.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center"
+              >
+                <h3 className="font-text font-bold text-xl mb-2">Ferrofluid Music Visualizer</h3>
+                <img
+                src="/portfolio/images/ferrofluid.jpg"
+                alt="Ferrofluid Music Visualizer"
+                className="w-48 h-48 object-cover rounded-2xl mb-4"
+                />
+                <p className="font-text text-gray-700">
+                  An incremental view into the design & development of my ferrofluid music visualizer. 
+                  Powered by a Raspberry Pi Pico W and an electromagnet, with data transfer streamed over 
+                  a local wifi server built on micro-python.
+                </p>
+              </a>
+            </div>
+
+            {/* Moodrun App */}
+            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+              <a
+              href="https://pdxboyan.github.io/articles/12-13-24.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center"
+              >
+                <h3 className="font-text font-bold text-xl mb-2">Spotify / Open AI Cloud App</h3>
+                <img
+                src="/portfolio/images/moodrun.png"
+                alt="Cloud Run App"
+                className="w-48 h-48 object-cover rounded-2xl mb-4"
+                />
+                <p className="font-text text-gray-700">
+                  Flask / Python App launched with GCP's Cloud Run that ties Spotify & Open AI's 
+                  APIs together to recommend 5 songs to a user based on their current top songs and 
+                  their mood.
+                </p>
+              </a>
+            </div>
+
+            {/* Check-in & POS Server */}
+            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+              <a
+              href="https://pdxboyan.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center"
+              >
+                <h3 className="font-text font-bold text-xl mb-2">Check-in & Point of Sale Server</h3>
+                <img
+                src="/portfolio/images/epl.png"
+                alt="Electronics Prototyping Lab"
+                className="w-48 h-48 object-cover rounded-2xl mb-4"
+                />
+                <p className="font-text text-gray-700">
+                  A deep dive into my senior capstone project and the role I played in my team 
+                  throughout the development process. Showcases database & system design, agile 
+                  methods, connecting front & backends, and overcoming challenges.
+                </p>
+              </a>
+            </div>
+
+            {/* Cb Langauge */}
+            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+              <a
+              href="https://pdxboyan.github.io/articles/3-27-25.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center"
+              >
+                <h3 className="font-text font-bold text-xl mb-2">C Flat Programming Language</h3>
+                <img
+                src="/portfolio/images/CFlat.png"
+                alt="C Flat Language"
+                className="w-48 h-48 object-cover rounded-2xl mb-4"
+                />
+                <p className="font-text text-gray-700">
+                  An overview and demo of the rudimentary Cb (C flat) programming language. Built from 
+                  python using the Lark library to structure grammar, Cb is a simple interpretted, functional 
+                  programming language with the ability to evaluate and play simple melodies through a 
+                  homebrew synthesizer. 
+                </p>
+              </a>
+            </div>
+
+            {/* Fractals */}
+            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+              <a
+              href="https://pdxboyan.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center"
+              >
+                <h3 className="font-text font-bold text-xl mb-2">Fractal Generation</h3>
+                <img
+                src="/portfolio/images/fractal.jpg"
+                alt="The Burning Ship Fractal"
+                className="w-48 h-48 object-cover rounded-2xl mb-4"
+                />
+                <p className="font-text text-gray-700">
+                  A look into my journey with fractals -- how to generate, manipulate,
+                  and animate them using the C programming language and a custom graphics 
+                  library built on X11. 
+                </p>
+              </a>
+            </div>
+
+            {/* Portfolio Website */}
+            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+              <a
+              href="https://pdxboyan.github.io/articles"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center"
+              >
+                <h3 className="font-text font-bold text-xl mb-2">Portfolio Website</h3>
+                <img
+                src="/portfolio/images/C.png"
+                alt="React + Vite + Tailwind"
+                className="w-48 h-48 object-cover rounded-2xl mb-4"
+                />
+                <p className="font-text text-gray-700">
+                  Technical details about how I built this website; how I chose the tech 
+                  stack as well as my struggles and successes. 
+                </p>
+              </a>
+            </div>
+
+          </div>
       </section>
 
       {/* Contact Info */}
       <section id="contact" className="bg-orange-400 flex flex-col items-center justify-start pt-12 px-6">
         <Animate text="Contact" duration={2000} variant="primary" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 p-10 ">
+          
+            <div className="flex items-center space-x-3 pl-16">
+              <FaPhone size={28} />
+              <span>(503)-750-5934</span>
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <FaEnvelope size={28} />
+              <span>pdx.boyan@gmail.com</span>
+            </div>
+
+        </div>
       </section>
     </div>
   );
