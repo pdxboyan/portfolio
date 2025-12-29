@@ -56,7 +56,7 @@ function App() {
       >
         <div className="absolute top-1/8 md:top-1/3 bg-gray/40 backdrop-blur-sm p-20 md:p-28 rounded-lg text-center">
           <h2 className="font-title text-7xl md:text-8xl font-bold text-white"> Boyan Gankov </h2>
-          <p className="font-text mt-4 pt-6 text-2xl text-white">Full Stack Developer | Dev Ops | Security Enthusiest</p>
+          <p className="font-text mt-4 pt-6 text-2xl text-white">Backend Engineer | Cloud & Systems</p>
         </div>
       </section>
 
