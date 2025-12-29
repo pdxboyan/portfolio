@@ -112,7 +112,11 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 w-full max-w-6xl pb-12">
 
             {/* Ferrofluid Visualizer */}
-            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+            <div className="
+            bg-orange-200 rounded-2xl p-6
+            shadow-lg transition-all duration-300 ease-out
+            hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
+            focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
               <a
               href="https://pdxboyan.github.io/articles/12-11-24.html"
               target="_blank"
@@ -134,7 +138,11 @@ function App() {
             </div>
 
             {/* Moodrun App */}
-            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+            <div className="
+            bg-orange-200 rounded-2xl p-6
+            shadow-lg transition-all duration-300 ease-out
+            hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
+            focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
               <a
               href="https://pdxboyan.github.io/articles/12-13-24.html"
               target="_blank"
@@ -156,7 +164,11 @@ function App() {
             </div>
 
             {/* Check-in & POS Server */}
-            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+            <div className="
+            bg-orange-200 rounded-2xl p-6
+            shadow-lg transition-all duration-300 ease-out
+            hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
+            focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
               <a
               href="https://pdxboyan.github.io"
               target="_blank"
@@ -178,7 +190,11 @@ function App() {
             </div>
 
             {/* Cb Langauge */}
-            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+            <div className="
+            bg-orange-200 rounded-2xl p-6
+            shadow-lg transition-all duration-300 ease-out
+            hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
+            focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
               <a
               href="https://pdxboyan.github.io/articles/3-27-25.html"
               target="_blank"
@@ -201,7 +217,11 @@ function App() {
             </div>
 
             {/* Fractals */}
-            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+            <div className="
+            bg-orange-200 rounded-2xl p-6
+            shadow-lg transition-all duration-300 ease-out
+            hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
+            focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
               <a
               href="https://pdxboyan.github.io"
               target="_blank"
@@ -223,7 +243,11 @@ function App() {
             </div>
 
             {/* Portfolio Website */}
-            <div className="bg-orange-200 rounded-2xl shadow-lg p-6">
+            <div className="
+            bg-orange-200 rounded-2xl p-6
+            shadow-lg transition-all duration-300 ease-out
+            hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
+            focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
               <a
               href="https://pdxboyan.github.io/articles"
               target="_blank"
