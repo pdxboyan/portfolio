@@ -51,7 +51,7 @@ function App() {
       {/* Home */}
       <section
         id="hero"
-        className="h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
+        className="scroll-mt-24 h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/portfolio/images/background.jpg')" }}
       >
         <div className="absolute top-1/8 md:top-1/3 bg-gray/40 backdrop-blur-sm p-20 md:p-28 rounded-lg text-center">
@@ -61,8 +61,8 @@ function App() {
       </section>
 
       {/* About Me */}
-      <section id="about" className="bg-orange-200 flex flex-col items-center justify-start p-12">
-        <Animate text="About Me" color="#000" duration={2000} />
+      <section id="about" className="scroll-mt-24 bg-orange-200 flex flex-col items-center justify-start p-12">
+        <Animate text="About Me" duration={2000} variant="primary" />
          <div className="max-w-screen-3xl mx-auto pt-16 grid grid-cols-1 md:grid-cols-2 md:gap-16 items-start">
 
           {/* Left column */}
@@ -87,8 +87,9 @@ function App() {
           </div>
 
           {/* Right column */}
-          <div>
-            <h3 className="font-title text-3xl font-bold mb-8 text-center">Tech Stack</h3>
+          <div className="text-center">
+            {/*<h3 className="font-title text-3xl font-bold mb-8 text-center">Tech Stack</h3>*/}
+            <Animate text="Tech Stack" duration={2000} variant="secondary" />
 
             <div className="grid grid-cols-4 gap-6">
               {skills.map((skill) => (
@@ -107,13 +108,13 @@ function App() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="h-screen bg-orange-300 flex flex-col items-center justify-start pt-12 px-6">
-        <Animate text="Projects" color="#000" duration={2000} />
+      <section id="projects" className="scroll-mt-24 bg-orange-300 flex flex-col items-center justify-start pt-12 px-6">
+        <Animate text="Projects" duration={2000} variant="primary" />
       </section>
 
       {/* Contact Info */}
-      <section id="contact" className="min-h-[350px] bg-orange-400 flex flex-col items-center justify-start pt-12 px-6">
-        <Animate text="Contact" color="#000" duration={2000} />
+      <section id="contact" className="bg-orange-400 flex flex-col items-center justify-start pt-12 px-6">
+        <Animate text="Contact" duration={2000} variant="primary" />
       </section>
     </div>
   );
