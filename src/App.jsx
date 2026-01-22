@@ -6,7 +6,6 @@ import {
   faReact,
   faPython,
   faNodeJs,
-  faGitAlt,
   faAws, 
   faGoogle, 
   faDocker, 
@@ -14,14 +13,15 @@ import {
   faCss3Alt,
 } from "@fortawesome/free-brands-svg-icons";
 import { 
-  SiC, 
+  SiC,
+  SiCplusplus, 
   SiRust, 
   SiTailwindcss, 
   SiFlask, 
   SiDjango, 
   SiPostgresql 
 } from "react-icons/si";
-import { FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin} from "react-icons/fa6";
 
 
 const skills = [
@@ -30,6 +30,7 @@ const skills = [
   { icon: faDocker, label: "Docker", type: "fa" },
   { icon: faPython, label: "Python", type: "fa" },
   { icon: SiC, label: "C", type: "si" },
+  { icon: SiCplusplus, label: "C++", type: "si" },
   { icon: SiRust, label: "Rust", type: "si" },
   { icon: SiPostgresql, label: "PostgreSQL", type: "si" },
   { icon: faReact, label: "React", type: "fa" },
@@ -40,8 +41,47 @@ const skills = [
   { icon: SiTailwindcss, label: "Tailwind", type: "si" },
   { icon: SiFlask, label: "Flask", type: "si" },
   { icon: SiDjango, label: "Django", type: "si" },
-  { icon: faGitAlt, label: "Git", type: "fa" },
 ];
+
+const ferroVisual = [
+  { icon: faPython, type: "fa" }
+]
+
+const moodRun = [
+  { icon: faGoogle, type: "fa" },
+  { icon: faPython, type: "fa" },
+  { icon: SiFlask, type: "si" },
+]
+
+const checkInServer = [
+  { icon: faPython, type: "fa" },
+  { icon: SiPostgresql, type: "si" },
+  { icon: SiDjango, type: "si" },
+  { icon: faJs, type: "fa" },
+];
+
+const cFlat = [
+  { icon: faPython, type: "fa" }
+]
+
+const fractals = [
+  { icon: SiC, type: "si"}
+]
+
+const portfolioWebsite = [
+  { icon: faNodeJs, type: "fa"},
+  { icon: faReact, type: "fa"},
+  { icon: SiTailwindcss, type: "si"},
+]
+const renderIcons = (items) =>
+  items.map((skill) => (
+    <div
+      key={skill.label}
+      className="flex flex-col items-center gap-2 text-gray-700 hover:text-black transition-colors"
+    >
+      {skill.type === "fa" ? (<FontAwesomeIcon icon={skill.icon} size="2x" />) : (<skill.icon size="2em" />)}
+    </div>
+  ));
 
 function App() {
   return (
@@ -54,7 +94,7 @@ function App() {
         className="scroll-mt-24 h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/portfolio/images/background.jpg')" }}
       >
-        <div className="absolute top-1/8 md:top-1/3 bg-gray/40 backdrop-blur-sm px-8 py-12 md:p-28 rounded-lg text-center">
+        <div className="absolute top-1/3 md:top-1/3 bg-gray/40 backdrop-blur-sm px-8 py-16 md:p-28  rounded-lg text-center">
           <h2 className="font-title text-7xl md:text-8xl font-bold text-white"> Boyan Gankov </h2>
           <p className="font-text mt-4 pt-6 text-2xl text-white">Backend Engineer | Cloud & Systems</p>
         </div>
@@ -77,7 +117,7 @@ function App() {
               I focus on backend systems, with an emphasis on system architecture, database design, 
               and CI/CD pipelines. I enjoy building software that solves real-world problems while 
               remaining elegant, lightweight, and secure. Outside of development, I spend my time 
-              playing guitar, shooting astrophotography, and cooking.
+              playing guitar, cooking, and shooting astrophotography - see above!
             </div>
             <p className="font-text text-lg text-gray-800 pt-4">
               You can find some of the tools I'm familiar with here, as well as projects I've 
@@ -96,8 +136,7 @@ function App() {
                   key={skill.label}
                   className="flex flex-col items-center gap-2 text-gray-700 hover:text-black transition-colors"
                 >
-                  {skill.type === "fa" ? (<FontAwesomeIcon icon={skill.icon} size="2x" />) : (<skill.icon size="2em" />
-                  )}
+                  {skill.type === "fa" ? (<FontAwesomeIcon icon={skill.icon} size="2x" />) : (<skill.icon size="2em" />)}
                   <span className="font-text text-sm">{skill.label}</span>
                 </div>
               ))}
@@ -135,11 +174,17 @@ function App() {
                   a local wifi server built on micro-python.
                 </p>
               </a>
+
+              <div className="mt-auto pt-6">
+                <div className="flex gap-4">
+                  {renderIcons(ferroVisual)}
+                </div>
+              </div>
             </div>
 
             {/* Moodrun App */}
             <div className="
-            bg-orange-200 rounded-2xl p-6
+            bg-orange-200 rounded-2xl p-6 flex flex-col
             shadow-lg transition-all duration-300 ease-out
             hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
             focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
@@ -161,11 +206,17 @@ function App() {
                   their mood.
                 </p>
               </a>
+              
+              <div className="mt-auto pt-6">
+                <div className="flex gap-4">
+                  {renderIcons(moodRun)}
+                </div>
+              </div>
             </div>
 
             {/* Check-in & POS Server */}
             <div className="
-            bg-orange-200 rounded-2xl p-6
+            bg-orange-200 rounded-2xl p-6 flex flex-col
             shadow-lg transition-all duration-300 ease-out
             hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
             focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
@@ -187,11 +238,17 @@ function App() {
                   methods, connecting front & backends, and overcoming challenges.
                 </p>
               </a>
+
+              <div className="mt-auto pt-6">
+                <div className="flex gap-4">
+                  {renderIcons(checkInServer)}
+                </div>
+              </div>
             </div>
 
             {/* Cb Langauge */}
             <div className="
-            bg-orange-200 rounded-2xl p-6
+            bg-orange-200 rounded-2xl p-6 flex flex-col
             shadow-lg transition-all duration-300 ease-out
             hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
             focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
@@ -214,11 +271,18 @@ function App() {
                   homebrew synthesizer. 
                 </p>
               </a>
+
+              <div className="mt-auto pt-6">
+                <div className="flex gap-4">
+                  {renderIcons(cFlat)}
+                </div>
+              </div>
+              
             </div>
 
             {/* Fractals */}
             <div className="
-            bg-orange-200 rounded-2xl p-6
+            bg-orange-200 rounded-2xl p-6 flex flex-col
             shadow-lg transition-all duration-300 ease-out
             hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
             focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
@@ -240,11 +304,18 @@ function App() {
                   library built on X11. 
                 </p>
               </a>
+
+              <div className="mt-auto pt-6">
+                <div className="flex gap-4">
+                  {renderIcons(fractals)}
+                </div>
+              </div>
+
             </div>
 
             {/* Portfolio Website */}
             <div className="
-            bg-orange-200 rounded-2xl p-6
+            bg-orange-200 rounded-2xl p-6 flex flex-col
             shadow-lg transition-all duration-300 ease-out
             hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
             focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
@@ -265,6 +336,13 @@ function App() {
                   stack as well as my struggles and successes. 
                 </p>
               </a>
+
+              <div className="mt-auto pt-6">
+                <div className="flex gap-4">
+                  {renderIcons(portfolioWebsite)}
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -274,11 +352,14 @@ function App() {
       <section id="contact" className="bg-orange-400 flex flex-col items-center justify-start pt-12 px-6">
         <Animate text="Contact" duration={2000} variant="primary" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 p-10 ">
-          
-            <div className="flex items-center space-x-3 pl-10 md:pl-16">
-              <FaPhone size={28} />
-              <span>(503)-750-5934</span>
+           <a href="https://www.linkedin.com/in/boyan-gankov-718a9926a/"
+                 label="LinkedIn"
+                 >
+            <div className="flex items-center space-x-3 pl-10 md:pl-24">
+              <FaLinkedin size={28} />
+              <span>Boyan Gankov</span>
             </div>
+          </a>
 
             <div className="flex items-center space-x-3 pl-10">
               <FaEnvelope size={28} />
