@@ -96,7 +96,7 @@ function App() {
       >
         <div className="absolute top-1/3 md:top-1/3 bg-gray/40 backdrop-blur-sm px-8 py-16 md:p-28  rounded-lg text-center">
           <h2 className="font-title text-7xl md:text-8xl font-bold text-white"> Boyan Gankov </h2>
-          <p className="font-text mt-4 pt-6 text-2xl text-white">Backend Engineer | Cloud & Systems</p>
+          <p className="font-text mt-4 pt-6 text-2xl text-white">Full Stack Developer</p>
         </div>
       </section>
 
@@ -132,13 +132,20 @@ function App() {
 
             <div className="grid grid-cols-4 gap-6">
               {skills.map((skill) => (
-                <div
-                  key={skill.label}
-                  className="flex flex-col items-center gap-2 text-gray-700 hover:text-black transition-colors"
-                >
-                  {skill.type === "fa" ? (<FontAwesomeIcon icon={skill.icon} size="2x" />) : (<skill.icon size="2em" />)}
-                  <span className="font-text text-sm">{skill.label}</span>
-                </div>
+                <a href="#projects">
+                  <div
+                    key={skill.label}
+                    className="flex flex-col items-center gap-2 text-gray-700"
+                  >
+                    {skill.type === "fa" ? 
+                    (<FontAwesomeIcon icon={skill.icon} size="2x" className="transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[2] hover:text-black
+                                                                             focus-within:-translate-y-2 focus-within:scale-[2]"/>) 
+                    : 
+                    (<skill.icon size="2em" className="transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[2] hover:text-black
+                                                       focus-within:-translate-y-2 focus-within:scale-[2]" />)}
+                    <span className="font-text text-sm ">{skill.label}</span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
