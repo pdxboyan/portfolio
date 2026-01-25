@@ -21,7 +21,7 @@ import {
   SiDjango, 
   SiPostgresql 
 } from "react-icons/si";
-import { FaEnvelope, FaLinkedin} from "react-icons/fa6";
+import { FaEnvelope, FaLinkedin, FaDownload} from "react-icons/fa6";
 
 
 const skills = [
@@ -99,8 +99,18 @@ function App() {
         <div className="absolute top-1/3 md:top-1/3 bg-gray/40 backdrop-blur-sm px-8 py-16 md:p-28  rounded-lg text-center">
           <h2 className="font-title text-7xl md:text-8xl font-bold text-white"> Boyan Gankov </h2>
           <p className="font-text mt-4 pt-6 text-2xl text-white">Full Stack Developer</p>
-          <a href="?">
-            <p className="font-text pt-6 text-2x1 text-white">Download CV</p>
+          <a
+            href="/portfolio/Boyan_Gankov_Resume.pdf"
+            download
+            className="inline-flex items-center gap-3 mt-10 px-6 py-3
+                      border-2 border-white rounded-xl
+                      font-text text-xl text-white
+                      transition-all duration-300 ease-out
+                      hover:bg-white hover:text-black
+                      hover:-translate-y-1 hover:shadow-xl"
+          >
+            Download CV
+            <FaDownload size={18} />
           </a>
         </div>
       </section>
