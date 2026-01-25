@@ -26,6 +26,14 @@
   font-display: swap;;
 }
 
+@font-face {
+  font-family: "Cantarell-Italic";
+  src: url("/fonts/Cantarell-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -6,14 +6,11 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "#0ea5e9",
-        secondary: "#1e293b",
-      },
       fontFamily: {
         brand: ["'Press Start 2P'", "serif"],
-        title: ["'Cantarell-Bold'", "serif"],
-        text: ["'Cantarell-Regular'", "serif"],
+        title: ["Cantarell-Bold", "serif"],
+        text: ["Cantarell-Regular", "serif"],
+        subtext: ["Cantarell-Italic", "serif"],
       },
     },
   },
