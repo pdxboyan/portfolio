@@ -44,13 +44,14 @@ const skills = [
 ];
 
 const ferroVisual = [
-  { icon: faPython, type: "fa" }
+  { icon: faPython, type: "fa" },
 ]
 
 const moodRun = [
   { icon: faGoogle, type: "fa" },
   { icon: faPython, type: "fa" },
   { icon: SiFlask, type: "si" },
+  { icon: faDocker, type: "fa"},
 ]
 
 const checkInServer = [
@@ -154,12 +155,12 @@ function App() {
 
       {/* Projects */}
       <section id="projects" className="scroll-mt-24 bg-orange-300 flex flex-col items-center justify-start pt-12 px-6">
-        <Animate text="Projects" duration={2000} variant="primary" />
+        <Animate text="Projects & Blogs" duration={2000} variant="primary" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 w-full max-w-6xl pb-12">
 
             {/* Ferrofluid Visualizer */}
             <div className="
-            bg-orange-200 rounded-2xl p-6
+            bg-orange-200 rounded-2xl p-6 flex flex-col
             shadow-lg transition-all duration-300 ease-out
             hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
             focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
@@ -176,9 +177,8 @@ function App() {
                 className="w-48 h-48 object-cover rounded-2xl mb-4"
                 />
                 <p className="font-text text-gray-700">
-                  An incremental view into the design & development of my ferrofluid music visualizer. 
-                  Powered by a Raspberry Pi Pico W and an electromagnet, with data transfer streamed over 
-                  a local wifi server built on micro-python.
+                  An incremental view into the design & development of a realtime audio visualizer
+                  streaming audio from a local web server - from circuit to software.
                 </p>
               </a>
 
@@ -201,16 +201,16 @@ function App() {
               rel="noopener noreferrer"
               className="flex flex-col items-center"
               >
-                <h3 className="font-text font-bold text-xl mb-2">Spotify / Open AI Cloud App</h3>
+                <h3 className="font-text font-bold text-xl mb-2">MoodRun - AI Cloud App</h3>
                 <img
                 src="/portfolio/images/cloudrun.png"
                 alt="Cloud Run App"
                 className="w-48 h-48 object-cover rounded-2xl mb-4"
                 />
                 <p className="font-text text-gray-700">
-                  Flask / Python App launched with GCP's Cloud Run that ties Spotify & Open AI's 
-                  APIs together to recommend 5 songs to a user based on their current top songs and 
-                  their mood.
+                  MoodRun asks the user for access to their Spotify data to recommend
+                  5 songs based on their mood and their current music taste by tying 
+                  Spotify and OpenAI APIs together hosted on GCP's CloudRun.
                 </p>
               </a>
               
@@ -241,8 +241,8 @@ function App() {
                 />
                 <p className="font-text text-gray-700">
                   A deep dive into my senior capstone project and the role I played in my team 
-                  throughout the development process. Showcases database & system design, agile 
-                  methods, connecting front & backends, and overcoming challenges.
+                  throughout the development process. Showcases database & system design, Agile 
+                  methods, connecting front & backends between teams, and overcoming challenges.
                 </p>
               </a>
 
@@ -273,9 +273,8 @@ function App() {
                 />
                 <p className="font-text text-gray-700">
                   An overview and demo of the rudimentary Cb (C flat) programming language. Built from 
-                  python using the Lark library to structure grammar, Cb is a simple interpretted, functional 
-                  programming language with the ability to evaluate and play simple melodies through a 
-                  homebrew synthesizer. 
+                  python, Cb is a simple interpretted, functional programming language with the ability 
+                  to evaluate and play simple melodies through a homebrew synthesizer. 
                 </p>
               </a>
 
@@ -306,7 +305,7 @@ function App() {
                 className="w-48 h-48 object-cover rounded-2xl mb-4"
                 />
                 <p className="font-text text-gray-700">
-                  A look into my journey with fractals -- how to generate, manipulate,
+                  A look into my journey with fractals - how to generate, manipulate,
                   and animate them using the C programming language and a custom graphics 
                   library built on X11. 
                 </p>
@@ -363,7 +362,7 @@ function App() {
                  label="LinkedIn"
                  >
             <div className="flex items-center space-x-3 pl-10 md:pl-24">
-              <FaLinkedin size={28} />
+              <FaLinkedin size={28}/>
               <span>Boyan Gankov</span>
             </div>
           </a>
