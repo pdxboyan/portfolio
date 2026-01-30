@@ -224,11 +224,8 @@ function App() {
                   />
                   <p className="font-text text-gray-700">
                     MoodRun recommends 5 songs to a user based on their mood and current music taste
-                    by requesting access to their Spotify data and feeding that to 
-                    
-                    MoodRun asks the user for access to their Spotify data to recommend
-                    5 songs based on their mood and their current music taste by tying 
-                    Spotify and OpenAI APIs together hosted on GCP's CloudRun.
+                    by requesting access to their Spotify data, tying Spotify & OpenAI APIs together
+                    hosted on GCP's CloudRun.
                   </p>
                 </a>
                 
@@ -253,7 +250,7 @@ function App() {
                 >
                   <h3 className="font-text font-bold text-xl mb-2">Ferrofluid Music Visualizer</h3>
                   <img
-                  src="/portfolio/images/ferrofluid.jpg"
+                  src="/portfolio/images/ferrofluid.gif"
                   alt="Ferrofluid Music Visualizer"
                   className="w-48 h-48 object-cover rounded-2xl mb-4"
                   />
