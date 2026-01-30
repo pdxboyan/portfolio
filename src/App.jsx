@@ -250,7 +250,7 @@ function App() {
                 >
                   <h3 className="font-text font-bold text-xl mb-2">Ferrofluid Music Visualizer</h3>
                   <img
-                  src="/portfolio/images/ferrofluid.gif"
+                  src="/portfolio/images/ferrodemo.gif"
                   alt="Ferrofluid Music Visualizer"
                   className="w-48 h-48 object-cover rounded-2xl mb-4"
                   />
