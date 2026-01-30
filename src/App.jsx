@@ -284,17 +284,17 @@ function App() {
                 <img
                 src="/portfolio/images/Cb.png"
                 alt="C Flat Language"
-                className="w-32 h-32 object-cover rounded-2xl mr-4"
+                className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-2xl mr-4"
                 />
                 <div className="flex flex-col">
                   <div className="flex flex-row items-center mb-2">
                     <h3 className="font-text font-bold text-xl pr-3">C Flat Programming Language - </h3>
                     <p className="font-subtext text-l"> project</p>
                   </div>
-                  <p className="font-text text-gray-700">
+                  <p className="font-text text-gray-700 line-clamp-2 sm:line-clamp-none">
                     An overview and demo of the rudimentary Cb (C flat) programming language. Built from 
                     python, Cb is a simple interpretted, functional programming language with the ability 
-                    to evaluate and play simple melodies through a homebrew synthesizer. 
+                    to evaluate and play simple melodies through a synthesizer generated through wavetables. 
                   </p>
 
                   <div className="mt-auto pt-6">
@@ -322,14 +322,14 @@ function App() {
                 <img
                 src="/portfolio/images/fractal.jpg"
                 alt="The Burning Ship Fractal"
-                className="w-32 h-32 object-cover rounded-2xl mr-4"
+                className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-2xl mr-4"
                 />
                 <div className="flex flex-col">
                   <div className="flex flex-row items-center mb-2">
                     <h3 className="font-text font-bold text-xl pr-3">Fractal Generation - </h3>
                     <p className="font-subtext text-l"> blog</p>
                   </div>
-                  <p className="font-text text-gray-700">
+                  <p className="font-text text-gray-700 line-clamp-2 sm:line-clamp-none">
                     A look into my journey with fractals - how to generate, manipulate,
                     and animate them using the C programming language and a custom graphics 
                     library built on X11. 
@@ -360,14 +360,14 @@ function App() {
                 <img
                 src="/portfolio/images/portfolio.png"
                 alt="React + Vite + Tailwind"
-                className="w-32 h-32 object-cover rounded-2xl mr-4"
+                className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-2xl mr-4"
                 />
                 <div className="flex flex-col">
                   <div className="flex flex-row items-center mb-2">
                     <h3 className="font-text font-bold text-xl pr-3">Portfolio Website - </h3>
                     <p className="font-subtext text-l"> blog</p>
                   </div>
-                  <p className="font-text text-gray-700">
+                  <p className="font-text text-gray-700 line-clamp-2 sm:line-clamp-none">
                     Technical details about how I built this website; how I chose the tech 
                     stack as well as my struggles and successes. 
                   </p>
