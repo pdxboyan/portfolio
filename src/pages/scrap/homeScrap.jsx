@@ -1,7 +1,7 @@
-import Navbar from "./pages/components/navbar";
-import Animate from "./pages/components/animateHeaders";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Animate from "./components/animateHeaders";
+import { Link } from "react-router-dom";
 import { FaEnvelope, FaLinkedin, FaDownload} from "react-icons/fa6";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     renderIcons,
     skills,
@@ -11,21 +11,18 @@ import {
     cFlat,
     fractals,
     portfolioWebsite
-} from "./pages/components/icons";
+} from "./components/icons";
 
-
-function App() {
+function Home() {
   return (
-    <div className="pt-24 bg-orange-300">
-      <Navbar />
-
+    <div>
       {/* Home */}
       <section
         id="hero"
         className="scroll-mt-24 h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/portfolio/images/background.jpg')" }}
       >
-        <div className="absolute top-1/5 bg-gray/40 backdrop-blur-sm px-8 py-16 md:p-28  rounded-lg text-center">
+        <div className="absolute top-1/3 md:top-1/3 bg-gray/40 backdrop-blur-sm px-8 py-16 md:p-28  rounded-lg text-center">
           <h2 className="font-title text-7xl md:text-8xl font-bold text-white"> Boyan Gankov </h2>
           <p className="font-text mt-4 pt-6 text-2xl text-white">Full Stack Developer</p>
           <a
@@ -220,7 +217,7 @@ function App() {
                     <h3 className="font-text font-bold text-xl pr-3">C Flat Programming Language - </h3>
                     <p className="font-subtext text-l"> project</p>
                   </div>
-                  <p className="font-text text-gray-700 line-clamp-2 md:line-clamp-none">
+                  <p className="font-text text-gray-700 line-clamp-2 sm:line-clamp-none">
                     An overview and demo of the rudimentary Cb (C flat) programming language. Built from 
                     python, Cb is a simple interpretted, functional programming language with the ability 
                     to evaluate and play simple melodies through a synthesizer generated through wavetables. 
@@ -242,10 +239,8 @@ function App() {
             shadow-lg transition-all duration-300 ease-out
             hover:-translate-y-1 hover:scale-[1.03] hover:shadow-2xl
             focus-within:-translate-y-1 focus-within:scale-[1.03] focus-within:shadow-2xl">
-              <a
-              href="https://pdxboyan.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
+              <Link
+              to="/fractals"
               className="flex flex-row items-center"
               >
                 <img
@@ -271,7 +266,7 @@ function App() {
                   </div>
 
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Portfolio Website */}
@@ -338,4 +333,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
