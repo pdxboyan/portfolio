@@ -1,89 +1,22 @@
-import Navbar from "./components/navbar";
-import Animate from "./components/animateHeaders";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Navbar from "./pages/components/navbar";
+import Animate from "./pages/components/animateHeaders";
+import MinorProjectCard from "./pages/components/minorCard";
+import MajorProjectCard from "./pages/components/marjorCard";
+import Modal from "./pages/components/modal";
+
 import {
-  faJs,
-  faReact,
-  faPython,
-  faNodeJs,
-  faAws, 
-  faGoogle, 
-  faDocker, 
-  faHtml5, 
-  faCss3Alt,
-} from "@fortawesome/free-brands-svg-icons";
-import { 
-  SiC,
-  SiCplusplus, 
-  SiRust, 
-  SiTailwindcss, 
-  SiFlask, 
-  SiDjango, 
-  SiPostgresql 
-} from "react-icons/si";
+  renderIcons,
+  skills,
+  ferroVisual,
+  moodRun,
+  checkInServer,
+  cFlat,
+  fractals,
+  portfolioWebsite,
+} from "./pages/components/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaEnvelope, FaLinkedin, FaDownload} from "react-icons/fa6";
 
-
-const skills = [
-  { icon: faAws, label: "AWS", id: "aws", type: "fa" },
-  { icon: faGoogle, label: "GCP", id: "gcp", type: "fa" },
-  { icon: faDocker, label: "Docker", id: "docker", type: "fa" },
-  { icon: faPython, label: "Python", id: "python", type: "fa" },
-  { icon: SiC, label: "C", id: "c", type: "si" },
-  { icon: SiCplusplus, label: "C++", id: "c++", type: "si" },
-  { icon: SiRust, label: "Rust", id: "rust", type: "si" },
-  { icon: SiPostgresql, label: "PostgreSQL", id: "postgresql", type: "si" },
-  { icon: faReact, label: "React", id: "react", type: "fa" },
-  { icon: faNodeJs, label: "Node.js", id: "node.js", type: "fa" },
-  { icon: faHtml5, label: "HTML", id: "html", type: "fa" },
-  { icon: faCss3Alt, label: "CSS", id: "css", type: "fa" },
-  { icon: faJs, label: "JavaScript", id: "javascript", type: "fa" },
-  { icon: SiTailwindcss, label: "Tailwind", id: "tailwind", type: "si" },
-  { icon: SiFlask, label: "Flask", id: "flask", type: "si" },
-  { icon: SiDjango, label: "Django", id: "django", type: "si" },
-];
-
-const ferroVisual = [
-  { icon: faPython, label: "Python", id: "python", type: "fa" },
-]
-
-const moodRun = [
-  { icon: faGoogle, label: "GCP", id: "gcp", type: "fa" },
-  { icon: faPython, label: "Python", id: "python", type: "fa" },
-  { icon: SiFlask, label: "Flask", id: "flask", type: "si" },
-  { icon: faDocker, label: "Docker", id: "docker", type: "fa"},
-]
-
-const checkInServer = [
-  { icon: SiPostgresql, label: "PostgreSQL", id: "postgresql", type: "si" },
-  { icon: faPython, label: "Python", id: "python", type: "fa" },
-  { icon: SiDjango, label: "Django", id: "django", type: "si" },
-  { icon: faJs, label: "JavaScript", id: "javascript", type: "fa" },
-];
-
-const cFlat = [
-  { icon: faPython, label: "Python", id: "python", type: "fa" }
-]
-
-const fractals = [
-  { icon: SiC, label: "C", id: "c", type: "si"}
-]
-
-const portfolioWebsite = [
-  { icon: faNodeJs, label: "Node.js", id: "node.js", type: "fa"},
-  { icon: faReact, label: "React", id: "react", type: "fa"},
-  { icon: SiTailwindcss, label: "Tailwind", id: "tailwind", type: "si"},
-]
-
-const renderIcons = (items, prefix) =>
-  items.map((skill) => (
-    <div
-      key={`${prefix}-${skill.id}`}
-      className="flex flex-col items-center gap-2 text-gray-700 hover:text-black transition-colors"
-    >
-      {skill.type === "fa" ? (<FontAwesomeIcon icon={skill.icon} size="2x" />) : (<skill.icon size="2em" />)}
-    </div>
-  ));
 
 function App() {
   return (
@@ -173,214 +106,69 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 pb-8">
 
               {/* Check-in & POS Server */}
-              <div className="
-              bg-orange-200 rounded-2xl p-6 flex flex-col
-              shadow-lg transition-all duration-300 ease-out
-              hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
-              focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
-                <a
+              <MajorProjectCard
+                title="Check-in & Point of Sale Server"
+                description="A deep dive into my senior capstone project and the role I played in my team throughout the development process. Showcases database & system design, Agile methods, connecting front & backends between teams, and overcoming challenges."
+                image="/portfolio/images/psu.png"
+                alt="Electronics Prototyping Lab"
                 href="https://pdxboyan.github.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center"
-                >
-                  <h3 className="font-text font-bold text-xl mb-2">Check-in & Point of Sale Server</h3>
-                  <img
-                  src="/portfolio/images/psu.png"
-                  alt="Electronics Prototyping Lab"
-                  className="w-48 h-48 object-cover rounded-2xl mb-4"
-                  />
-                  <p className="font-text text-gray-700">
-                    A deep dive into my senior capstone project and the role I played in my team 
-                    throughout the development process. Showcases database & system design, Agile 
-                    methods, connecting front & backends between teams, and overcoming challenges.
-                  </p>
-                </a>
-
-                <div className="mt-auto pt-6">
-                  <div className="flex gap-4">
-                    {renderIcons(checkInServer, "check-in")}
-                  </div>
-                </div>
-              </div>
+                icons={renderIcons(checkInServer, "check-in")}
+              />
 
               {/* Moodrun App */}
-              <div className="
-              bg-orange-200 rounded-2xl p-6 flex flex-col
-              shadow-lg transition-all duration-300 ease-out
-              hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
-              focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
-                <a
+              <MajorProjectCard
+                title="MoodRun – AI Cloud App"
+                description="MoodRun recommends 5 songs to a user based on their mood and current music taste by requesting access to their Spotify data, tying Spotify & OpenAI APIs together hosted on GCP's CloudRun."
+                image="/portfolio/images/cloudrun.png"
+                alt="Cloud Run App"
                 href="https://pdxboyan.github.io/articles/12-13-24.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center"
-                >
-                  <h3 className="font-text font-bold text-xl mb-2">MoodRun - AI Cloud App</h3>
-                  <img
-                  src="/portfolio/images/cloudrun.png"
-                  alt="Cloud Run App"
-                  className="w-48 h-48 object-cover rounded-2xl mb-4"
-                  />
-                  <p className="font-text text-gray-700">
-                    MoodRun recommends 5 songs to a user based on their mood and current music taste
-                    by requesting access to their Spotify data, tying Spotify & OpenAI APIs together
-                    hosted on GCP's CloudRun.
-                  </p>
-                </a>
-                
-                <div className="mt-auto pt-6">
-                  <div className="flex gap-4">
-                    {renderIcons(moodRun, "moodRun")}
-                  </div>
-                </div>
-              </div>
+                icons={renderIcons(moodRun, "moodRun")}
+              />
 
               {/* Ferrofluid Visualizer */}
-              <div className="
-              bg-orange-200 rounded-2xl p-6 flex flex-col
-              shadow-lg transition-all duration-300 ease-out
-              hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl
-              focus-within:-translate-y-2 focus-within:scale-[1.03] focus-within:shadow-2xl">
-                <a
+              <MajorProjectCard
+                title="Ferrofluid Music Visualizer"
+                description="An incremental view into the design & development of a realtime audio visualizer streaming audio from a local web server — from circuit to software."
+                image="/portfolio/images/ferrodemo.gif"
+                alt="Ferrofluid Music Visualizer"
                 href="https://pdxboyan.github.io/articles/12-11-24.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center"
-                >
-                  <h3 className="font-text font-bold text-xl mb-2">Ferrofluid Music Visualizer</h3>
-                  <img
-                  src="/portfolio/images/ferrodemo.gif"
-                  alt="Ferrofluid Music Visualizer"
-                  className="w-48 h-48 object-cover rounded-2xl mb-4"
-                  />
-                  <p className="font-text text-gray-700">
-                    An incremental view into the design & development of a realtime audio visualizer
-                    streaming audio from a local web server - from circuit to software.
-                  </p>
-                </a>
-
-                <div className="mt-auto pt-6">
-                  <div className="flex gap-4">
-                    {renderIcons(ferroVisual, "ferro")}
-                  </div>
-                </div>
-              </div>
+                icons={renderIcons(ferroVisual, "ferro")}
+              />
 
             </div>
             
             {/* Cb Langauge */}
-            <div className="
-            bg-orange-200 rounded-2xl p-6 m-1 w-full
-            shadow-lg transition-all duration-300 ease-out
-            hover:-translate-y-1 hover:scale-[1.03] hover:shadow-2xl
-            focus-within:-translate-y-1 focus-within:scale-[1.03] focus-within:shadow-2xl">
-              <a
+            <MinorProjectCard
+              title="C Flat Programming Language"
+              label="project"
+              description="An overview and demo of the rudimentary Cb (C flat) programming language. Built from Python, Cb is a simple interpreted, functional programming language with the ability to evaluate and play simple melodies through a homebrew synthesizer."
+              image="/portfolio/images/Cb.png"
+              alt="C Flat Language"
               href="https://pdxboyan.github.io/articles/3-27-25.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-row items-center"
-              >
-                <img
-                src="/portfolio/images/Cb.png"
-                alt="C Flat Language"
-                className="w-32 h-32 object-cover rounded-2xl mr-4"
-                />
-                <div className="flex flex-col">
-                  <div className="flex flex-row items-center mb-2">
-                    <h3 className="font-text font-bold text-xl pr-3">C Flat Programming Language - </h3>
-                    <p className="font-subtext text-l"> project</p>
-                  </div>
-                  <p className="font-text text-gray-700">
-                    An overview and demo of the rudimentary Cb (C flat) programming language. Built from 
-                    python, Cb is a simple interpretted, functional programming language with the ability 
-                    to evaluate and play simple melodies through a homebrew synthesizer. 
-                  </p>
-
-                  <div className="mt-auto pt-6">
-                    <div className="flex gap-4">
-                      {renderIcons(cFlat, "cFlat")}
-                    </div>
-                  </div>
-
-                </div>
-              </a>
-            </div>
+              icons={renderIcons(cFlat, 'cFlat')}
+            />
 
             {/* Fractals */}
-            <div className="
-            bg-orange-200 rounded-2xl p-6 m-1 w-full
-            shadow-lg transition-all duration-300 ease-out
-            hover:-translate-y-1 hover:scale-[1.03] hover:shadow-2xl
-            focus-within:-translate-y-1 focus-within:scale-[1.03] focus-within:shadow-2xl">
-              <a
+            <MinorProjectCard
+              title="Fractal Generation"
+              label="blog"
+              description="A look into my journey with fractals — how to generate, manipulate, and animate them using the C programming language and a custom graphics library built on X11."
+              image="/portfolio/images/fractal.jpg"
+              alt="The Burning Ship Fractal"
               href="https://pdxboyan.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-row items-center"
-              >
-                <img
-                src="/portfolio/images/fractal.jpg"
-                alt="The Burning Ship Fractal"
-                className="w-32 h-32 object-cover rounded-2xl mr-4"
-                />
-                <div className="flex flex-col">
-                  <div className="flex flex-row items-center mb-2">
-                    <h3 className="font-text font-bold text-xl pr-3">Fractal Generation - </h3>
-                    <p className="font-subtext text-l"> blog</p>
-                  </div>
-                  <p className="font-text text-gray-700">
-                    A look into my journey with fractals - how to generate, manipulate,
-                    and animate them using the C programming language and a custom graphics 
-                    library built on X11. 
-                  </p>
-
-                  <div className="mt-auto pt-6">
-                    <div className="flex gap-4">
-                      {renderIcons(fractals, "fractals")}
-                    </div>
-                  </div>
-
-                </div>
-              </a>
-            </div>
+              icons={renderIcons(fractals, 'fractals')}
+            />
 
             {/* Portfolio Website */}
-            <div className="
-            bg-orange-200 rounded-2xl p-6 m-1 w-full
-            shadow-lg transition-all duration-300 ease-out
-            hover:-translate-y-1 hover:scale-[1.03] hover:shadow-2xl
-            focus-within:-translate-y-1 focus-within:scale-[1.03] focus-within:shadow-2xl">
-              <a
+            <MinorProjectCard
+              title="Portfolio Website"
+              label="blog"
+              description="Technical details about how I built this website; how I chose the tech stack as well as my struggles and successes."
+              image="/portfolio/images/portfolio.png"
+              alt="React + Vite + Tailwind"
               href="https://pdxboyan.github.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-row items-center"
-              >
-                <img
-                src="/portfolio/images/portfolio.png"
-                alt="React + Vite + Tailwind"
-                className="w-32 h-32 object-cover rounded-2xl mr-4"
-                />
-                <div className="flex flex-col">
-                  <div className="flex flex-row items-center mb-2">
-                    <h3 className="font-text font-bold text-xl pr-3">Portfolio Website - </h3>
-                    <p className="font-subtext text-l"> blog</p>
-                  </div>
-                  <p className="font-text text-gray-700">
-                    Technical details about how I built this website; how I chose the tech 
-                    stack as well as my struggles and successes. 
-                  </p>
-
-                  <div className="mt-auto pt-6">
-                    <div className="flex gap-4">
-                      {renderIcons(portfolioWebsite, "portfolio")}
-                    </div>
-                  </div>
-
-                </div>
-              </a>
-            </div>
+              icons={renderIcons(portfolioWebsite, 'portfolio')}
+            />
 
           </div>
       </section>
