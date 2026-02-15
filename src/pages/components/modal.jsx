@@ -10,14 +10,11 @@ export default function Modal({ isOpen, onClose, children }) {
 
     // ESC key handler
     const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
+      if (e.key === "Escape") onClose();
     };
 
     window.addEventListener("keydown", handleKeyDown);
 
-    // Cleanup on close
     return () => {
       document.body.style.overflow = originalStyle;
       window.removeEventListener("keydown", handleKeyDown);
@@ -37,27 +34,28 @@ export default function Modal({ isOpen, onClose, children }) {
       {/* Modal content */}
       <div
         className="
-          relative z-10
-          w-[95%] max-w-5xl max-h-[90vh]
-          bg-neutral-900 rounded-2xl
+          relative
+          w-[80%] max-h-[85vh]
+          bg-orange-200 rounded-2xl
           overflow-y-auto
         "
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="
-            absolute top-4 right-4
-            text-white text-2xl
-            hover:opacity-70 transition
-          "
-          aria-label="Close modal"
-        >
-          ✕
-        </button>
+        {/* Sticky Close Button */}
+        <div className="sticky top-0 flex justify-end z-20 pt-4 pr-6">
+          <button
+            onClick={onClose}
+            className="text-black text-3xl hover:opacity-70 transition"
+            aria-label="Close modal"
+          >
+            ✕
+          </button>
+        </div>
 
-        {children}
+        {/* Modal body */}
+        <div className="p-6 pt-0">
+          {children}
+        </div>
       </div>
     </div>
   );

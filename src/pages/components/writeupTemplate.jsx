@@ -8,29 +8,27 @@ export default function WriteupLayout({
   children,
 }) {
   return (
-    <main className="mt-24 min-h-screen">
-      <section className="max-w-md md:max-w-7xl bg-orange-200 rounded-2xl mx-auto px-6 py-16">
+      <section className="bg-orange-200 rounded-2xl mx-auto px-6 py-16">
         <div className="flex flex-col items-center">
           {/* Title */}
           <Animate text={title} duration={2000} variant="secondary"/>
-          <p className="font-subtext text-l"> {date}</p>
+          <p className="font-subtext text-l mb-8"> {date}</p>
 
           {image && (
             <img
               src={image}
               alt={imageAlt}
-              className="max-w-fit shadow-xl"
+              className="w-3/4 aspect-[2.6/1] object-cover rounded-2xl shadow-lg"
             />
           )}
         </div>
 
         {/* Article */}
-        <article className="mt-16 space-y-8 leading-relaxed">
+        <article className="max-w-[75%] mx-auto mt-16 space-y-8">
 
           {children}
 
         </article>
       </section>
-    </main>
   );
 }

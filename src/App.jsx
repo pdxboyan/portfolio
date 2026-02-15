@@ -2,8 +2,9 @@ import Navbar from "./pages/components/navbar";
 import Animate from "./pages/components/animateHeaders";
 import MinorProjectCard from "./pages/components/minorCard";
 import MajorProjectCard from "./pages/components/marjorCard";
-import Modal from "./pages/components/modal";
+import AnimateModals from "./pages/components/animateModals";
 
+import { useState } from "react";
 import {
   renderIcons,
   skills,
@@ -19,6 +20,8 @@ import { FaEnvelope, FaLinkedin, FaDownload} from "react-icons/fa6";
 
 
 function App() {
+  const [activeModal, setActiveModal] = useState(null);
+
   return (
     <div className="pt-24 bg-orange-300">
       <Navbar />
@@ -111,17 +114,17 @@ function App() {
                 description="A deep dive into my senior capstone project and the role I played in my team throughout the development process. Showcases database & system design, Agile methods, connecting front & backends between teams, and overcoming challenges."
                 image="/portfolio/images/psu.png"
                 alt="Electronics Prototyping Lab"
-                href="https://pdxboyan.github.io"
+                onClick={() => setActiveModal("checkin")}
                 icons={renderIcons(checkInServer, "check-in")}
               />
 
               {/* Moodrun App */}
               <MajorProjectCard
-                title="MoodRun – AI Cloud App"
+                title="MoodRun - AI Cloud App"
                 description="MoodRun recommends 5 songs to a user based on their mood and current music taste by requesting access to their Spotify data, tying Spotify & OpenAI APIs together hosted on GCP's CloudRun."
                 image="/portfolio/images/cloudrun.png"
                 alt="Cloud Run App"
-                href="https://pdxboyan.github.io/articles/12-13-24.html"
+                onClick={() => setActiveModal("moodrun")}
                 icons={renderIcons(moodRun, "moodRun")}
               />
 
@@ -131,7 +134,7 @@ function App() {
                 description="An incremental view into the design & development of a realtime audio visualizer streaming audio from a local web server — from circuit to software."
                 image="/portfolio/images/ferrodemo.gif"
                 alt="Ferrofluid Music Visualizer"
-                href="https://pdxboyan.github.io/articles/12-11-24.html"
+                onClick={() => setActiveModal("ferro")}
                 icons={renderIcons(ferroVisual, "ferro")}
               />
 
@@ -144,7 +147,7 @@ function App() {
               description="An overview and demo of the rudimentary Cb (C flat) programming language. Built from Python, Cb is a simple interpreted, functional programming language with the ability to evaluate and play simple melodies through a homebrew synthesizer."
               image="/portfolio/images/Cb.png"
               alt="C Flat Language"
-              href="https://pdxboyan.github.io/articles/3-27-25.html"
+              onClick={() => setActiveModal("cflat")}
               icons={renderIcons(cFlat, 'cFlat')}
             />
 
@@ -155,7 +158,7 @@ function App() {
               description="A look into my journey with fractals — how to generate, manipulate, and animate them using the C programming language and a custom graphics library built on X11."
               image="/portfolio/images/fractal.jpg"
               alt="The Burning Ship Fractal"
-              href="https://pdxboyan.github.io"
+              onClick={() => setActiveModal("fractals")}
               icons={renderIcons(fractals, 'fractals')}
             />
 
@@ -166,9 +169,12 @@ function App() {
               description="Technical details about how I built this website; how I chose the tech stack as well as my struggles and successes."
               image="/portfolio/images/portfolio.png"
               alt="React + Vite + Tailwind"
-              href="https://pdxboyan.github.io/"
+              onClick={() => setActiveModal("portfolio")}
               icons={renderIcons(portfolioWebsite, 'portfolio')}
             />
+
+            {/* Handles modal behavior for all projects */}
+            <AnimateModals trigger={{ activeModal, setActiveModal }} />
 
           </div>
       </section>
