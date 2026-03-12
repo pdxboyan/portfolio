@@ -36,7 +36,7 @@ function App() {
           <h2 className="font-title text-7xl md:text-8xl font-bold text-white"> Boyan Gankov </h2>
           <p className="font-text mt-4 pt-6 text-2xl text-white">Full Stack Developer</p>
           <a
-            href="/portfolio/Boyan_Gankov_Resume.pdf"
+            href="/portfolio/Resume_Boyan_Gankov.pdf"
             download
             className="inline-flex items-center gap-3 mt-10 px-6 py-3
                       border-2 border-white rounded-xl
